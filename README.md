@@ -1,7 +1,7 @@
 # GL-iNet 系列路由器 一键iStoreOS风格化脚本
-[![GitHub](https://img.shields.io/github/license/wukongdaily/gl-inet-onescript.svg?label=LICENSE&logo=github&logoColor=%20)](https://github.com/wukongdaily/gl-inet-onescript/blob/master/LICENSE)
-![GitHub Stars](https://img.shields.io/github/stars/wukongdaily/gl-inet-onescript.svg?style=flat&logo=appveyor&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/wukongdaily/gl-inet-onescript.svg?style=flat&logo=appveyor&label=Forks&logo=github)
+[![GitHub](https://img.shields.io/github/license/Amvhunt/gl-inet-onescript.svg?label=LICENSE&logo=github&logoColor=%20)](https://github.com/Amvhunt/gl-inet-onescript/blob/master/LICENSE)
+![GitHub Stars](https://img.shields.io/github/stars/Amvhunt/gl-inet-onescript.svg?style=flat&logo=appveyor&label=Stars&logo=github)
+![GitHub Forks](https://img.shields.io/github/forks/Amvhunt/gl-inet-onescript.svg?style=flat&logo=appveyor&label=Forks&logo=github)
 
 
 
@@ -34,11 +34,11 @@
 ### 1. SSH连接到路由器,或者在路由器终端执行如下命令
 
 ```bash
-wget -O gl-inet.sh https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/gl-inet.sh?$(date +%s) && chmod +x gl-inet.sh && ./gl-inet.sh
+wget -O gl-inet.sh https://raw.githubusercontent.com/Amvhunt/gl-inet-onescript/master/gl-inet.sh?$(date +%s) && chmod +x gl-inet.sh && ./gl-inet.sh
 ```
 ### 上述命令如果下载失败——内地用户请使用⬇️
 ```bash
-wget -O gl-inet.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/gl-inet.sh && chmod +x gl-inet.sh 
+wget -O gl-inet.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/Amvhunt/gl-inet-onescript/master/gl-inet.sh && chmod +x gl-inet.sh 
 sh gl-inet.sh use_proxy
 ```
 ### 下次如何调用,在当前目录下执行
@@ -51,30 +51,30 @@ sh gl-inet.sh use_proxy
 ```
 ### 2.单独安装Docker
 ```bash
-wget -O do_docker.sh https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/docker/do_docker.sh?$(date +%s) && chmod +x do_docker.sh && ./do_docker.sh
+wget -O do_docker.sh https://raw.githubusercontent.com/Amvhunt/gl-inet-onescript/master/docker/do_docker.sh?$(date +%s) && chmod +x do_docker.sh && ./do_docker.sh
 ```
 ### 或 使用
 ```bash
-wget -q -O do_docker.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/docker/do_docker.sh && chmod +x do_docker.sh
+wget -q -O do_docker.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/Amvhunt/gl-inet-onescript/master/docker/do_docker.sh && chmod +x do_docker.sh
 sh do_docker.sh use_proxy
 ```
 
 ### 3.单独安装iStore商店
 ```bash
-wget -O /tmp/reinstall_istore.sh https://gitee.com/wukongdaily/gl_onescript/raw/master/reinstall_istore.sh && chmod +x /tmp/reinstall_istore.sh && /tmp/reinstall_istore.sh
+wget -O /tmp/reinstall_istore.sh https://gitee.com/Amvhunt/gl_onescript/raw/master/reinstall_istore.sh && chmod +x /tmp/reinstall_istore.sh && /tmp/reinstall_istore.sh
 
 ```
 
 ### 4.单独安装文件管理器
 ```bash
-wget -O /tmp/reinstall_istore.sh https://gitee.com/wukongdaily/gl_onescript/raw/master/reinstall_istore.sh && chmod +x /tmp/reinstall_istore.sh && /tmp/reinstall_istore.sh
+wget -O /tmp/reinstall_istore.sh https://gitee.com/Amvhunt/gl_onescript/raw/master/reinstall_istore.sh && chmod +x /tmp/reinstall_istore.sh && /tmp/reinstall_istore.sh
 /tmp/is-opkg install app-meta-linkease
 
 ```
 
 
 ### 5.新手ssh连接注意事项
-https://github.com/wukongdaily/HowToUseSSH
+https://github.com/Amvhunt/HowToUseSSH
 ### 6.使用独立版docker-compose
 ```bash
 docker-compose version
@@ -146,7 +146,7 @@ https://pan.baidu.com/s/1S5jxahCzE-HyIa-mUvOcZQ?pwd=1111
 ### istore
 https://github.com/linkease/istore
 
-![mt3000](https://github.com/wukongdaily/gl-inet-onescript/assets/143675923/0ff6cb12-0812-4198-b97b-30698da6a8c4)
+![mt3000](https://github.com/Amvhunt/gl-inet-onescript/assets/143675923/0ff6cb12-0812-4198-b97b-30698da6a8c4)
 
 # 其他docker举例 盒子助手docker版
 ```bash
@@ -157,7 +157,7 @@ docker run -d \
   -p 2288:80 \
   -v "/mnt/upan_data/tvhelper_data:/tvhelper/shells/data" \
   -e PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/android-sdk/platform-tools \
-  wukongdaily/box:latest
+  Amvhunt/box:latest
 ```
 # 常见问题
 - 1、如果你发现运行容器后,访问docker容器的web界面之后，路由器的指示灯发生闪烁，不用慌，其实没有断网。
@@ -165,5 +165,5 @@ docker run -d \
 - 2、如果你发现运行容器后,访问不了docker容器的web界面。一般重启路由器就能解决。
 - 3、请注意为了节省路由器空间,平时上传文件 最好是上传到 /mnt/upan_data 这个目录下。因为这是U盘空间，比较大。
 # 💰打赏作者💰
-<img src="https://github.com/wukongdaily/tvhelper-docker/assets/143675923/1f92c5ba-1b6b-4967-a1ab-20697159badc" width="30%" />
+<img src="https://github.com/Amvhunt/tvhelper-docker/assets/143675923/1f92c5ba-1b6b-4967-a1ab-20697159badc" width="30%" />
 
