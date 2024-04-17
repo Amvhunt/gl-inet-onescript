@@ -148,7 +148,6 @@ install_docker() {
     opkg update >/dev/null 2>&1
     green "正在安装 Docker 及相关服务...请耐心等待一会...大约需要1分钟\n"
     opkg install luci-app-dockerman >/dev/null 2>&1
-    opkg install luci-i18n-dockerman-zh-cn >/dev/null 2>&1
     opkg install dockerd --force-depends >/dev/null 2>&1
     # 修改 /etc/config/dockerd 文件中的 data_root 配置
     sed -i "/option data_root/c\	option data_root '/mnt/upan_data/docker/'" /etc/config/dockerd
