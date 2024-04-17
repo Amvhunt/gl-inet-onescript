@@ -19,8 +19,8 @@ setup_base_init() {
 	#添加安卓时间服务器
 	add_dhcp_domain
 	##设置时区
-	uci set system.@system[0].zonename='Asia/Shanghai'
-	uci set system.@system[0].timezone='CST-8'
+	uci set system.@system[0].zonename='Euorpe/Kiev'
+	uci set system.@system[0].timezone='CST-3'
 	uci commit system
 	/etc/init.d/system reload
 
@@ -337,7 +337,6 @@ do_luci_app_adguardhome() {
 do_luci_app_wireguard() {
 	setup_software_source 0
 	opkg install luci-app-wireguard
-	opkg install luci-i18n-wireguard-zh-cn
 	echo "请访问 http://"$(uci get network.lan.ipaddr)"/cgi-bin/luci/admin/status/wireguard  查看状态 "
 	echo "也可以去接口中 查看是否增加了新的wireguard 协议的选项 "
 }
@@ -345,7 +344,7 @@ update_luci_app_quickstart() {
 	if [ -f "/bin/is-opkg" ]; then
 		# 如果 /bin/is-opkg 存在，则执行 is-opkg update
 		is-opkg update
-		is-opkg install luci-i18n-quickstart-zh-cn --force-depends >/dev/null 2>&1
+		is-opkg install luci-i18n-quickstart --force-depends >/dev/null 2>&1
 		yellow "恭喜您!现在你的路由器已经变成iStoreOS风格啦!"
 		green "如果没有首页和网络向导,可以执行第8项 更新luci_app_quickstart"
 	else
@@ -379,15 +378,14 @@ do_install_argon_skin() {
 	opkg install luci-lib-ipkg
 	wget -O "/tmp/luci-theme-argon.ipk" "${proxy}https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/theme/luci-theme-argon-master_2.2.9.4_all.ipk"
 	wget -O "/tmp/luci-app-argon-config.ipk" "${proxy}https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/theme/luci-app-argon-config_0.9_all.ipk"
-	wget -O "/tmp/luci-i18n-argon-config-zh-cn.ipk" "${proxy}https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/theme/luci-i18n-argon-config-zh-cn.ipk"
 	cd /tmp/
-	opkg install luci-theme-argon.ipk luci-app-argon-config.ipk luci-i18n-argon-config-zh-cn.ipk
+	opkg install luci-theme-argon.ipk luci-app-argon-config.ipk
 	# 检查上一个命令的返回值
 	if [ $? -eq 0 ]; then
 		echo "argon主题 安装成功"
 		# 设置主题和语言
 		uci set luci.main.mediaurlbase='/luci-static/argon'
-		uci set luci.main.lang='zh_cn'
+		uci set luci.main.lang='en'
 		uci commit
 		echo "重新登录web页面后, 查看新主题 "
 	else
